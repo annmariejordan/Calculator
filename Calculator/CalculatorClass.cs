@@ -4,41 +4,51 @@ using System.Text;
 
 namespace Calculator
 {
-    class CalculatorClass
+    public class CalculatorClass
     {
-        public int Addition(params [] number)
+        public int Addition(int[] numbers)
         {
-
-            throw new NotImplementedException();
+            int sum = 0;
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                sum += numbers[i];
+            }
+            return sum;
         }
 
-        public int Substract(int a, int b)
+        public int Subtract(int left, int right)
         {
-
-            throw new NotImplementedException();
+            return left - right;
         }
 
         public int Multiply(int a, int b)
         {
 
-            throw new NotImplementedException();
+            return a*b;
         }
 
-        public int Divide(int a, int b)
+        public double Divide(double a, double b)
         {
 
-            throw new NotImplementedException();
+            return a/b;
         }
 
-        public int Exponents(int a, int b)
+        public double Exponents(double a, double b)
         {
 
-            throw new NotImplementedException();
+            return Math.Pow(a,b);
         }
 
-        public int Factorial(int a, int b)
+        public int Factorial(int a)
         {
 
-            throw new NotImplementedException();
+            if (a == 0)
+            {
+                return 1;
+            }
+            return a * Factorial(a - 1);
+
+
         }
     }
+}
